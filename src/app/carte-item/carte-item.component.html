@@ -1,0 +1,16 @@
+<div class="carte-item">
+    <div class="carte-text">
+        #{{ carte.id}}. {{ carte.autor}}, {{ carte.titlu}}, {{ carte.editura}}, {{ carte.localitate}}, 
+        {{ carte.an}}, {{ carte.limba}}
+    </div>
+    <div class="carte-controls-box">
+        <div class="carte-control-button" (click)="onEditClicked()">
+            <i class="material-icons">edit</i>
+        </div>
+
+        <div class="carte-control-button is-danger" (click)="onDeleteClicked()">
+            <i class="material-icons">delete</i>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<section class="heading-section">
+
+    <img src="assets/logo1.png"><h1 class="title">IndexLib</h1>
+
+</section>
+
+<div class="container">
+
+<div class="add-carte-box">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+        <div class="field is-grouped" style="margin: 0">
+         <div class="form-cont">
+              <input ngModel #carteIdField="ngModel" name="id" class="input" type="number" placeholder="ID" required minlength="1">
+              <input ngModel #carteAutorField="ngModel" name="autor" class="input" type="text" placeholder="Autor" required minlength="1">
+              <input ngModel #carteTitluField="ngModel"name="titlu" class="input" type="text" placeholder="Titlu" required minlength="1">
+              <input ngModel #carteEdituraField="ngModel"name="editura" class="input" type="text" placeholder="Editura" required minlength="1">
+              <input ngModel #carteLocalitateaField="ngModel"name="localitatea" class="input" type="text" placeholder="Localitate" required minlength="1">
+              <input ngModel #carteAnField="ngModel"name="an" class="input" type="number" placeholder="An" required minlength="1">
+              <input ngModel #carteLimbaField="ngModel"name="limba" class="input" type="text" placeholder="Limba" required minlength="1">
+            </div>   
+          </div>
+          <p class="control">
+            <button class="button alt-gradient-button">
+                <i class="material-icons">add</i>
+              Adauga
+            </button>
+          </p>
+          <p class="help is-danger"  *ngIf="carteIdField.invalid && showValidationErrors || carteAutorField.invalid 
+          && showValidationErrors || carteTitluField.invalid && showValidationErrors 
+          || carteEdituraField.invalid && showValidationErrors || carteLocalitateaField.invalid 
+          && showValidationErrors || carteAnField.invalid && showValidationErrors || carteLimbaField 
+          && showValidationErrors">Toate campurile sunt obligatorii!</p>
+    </form>
+</div>
+</div>
+<section class="section">
+  <div class="container">
+    
+    <div class="carti-lista">
+      
+     <app-carte-item *ngFor="let carte of carti" [carte]="carte" (editClicked)="editCarte(carte)" (deleteClicked)="deleteCarte(carte)"></app-carte-item>
+     
+    </div>
+  </div>
+</section>

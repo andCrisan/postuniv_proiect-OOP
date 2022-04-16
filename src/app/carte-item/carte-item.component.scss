@@ -1,0 +1,28 @@
+.carte-item{
+    max-width: 1500px;
+    position: relative;
+    display: flex;
+    padding: 5px 20px;
+    font-size: 20px;
+    background: #eee; 
+    margin-bottom: 3px;
+    border-radius: 9px;
+}
+.carte-item .carte-controls-box{
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+}
+.carte-controls-box .carte-control-button{
+    display: flex;
+    padding: 7px 5px;
+    
+    i.material-icons{
+        font-size: 20px;
+    }
+
+}
+.carte-controls-box .carte-control-button.is-danger:active i.material-icons{
+    color: rgb(197, 42, 18);
+}
